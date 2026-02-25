@@ -1,0 +1,34 @@
+* {
+    font-family: "Inter", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: rgba(20, 20, 20, 0.8); /* Dark semi-transparent */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* Individual Module Styling */
+#workspaces, #pulseaudio, #memory, #cpu {
+    margin: 5px 5px 5px 5px;
+    padding-right: 5px;
+}
+
+/* Specific highlight for active workspace */
+#workspaces button.active {
+    color: white;
+}
+
+#workspaces button {
+    color: #a89984;
+}
+
+#clock {
+    background: transparent; /* Makes the center time feel "airy" */
+    font-weight: bold;
+    min-width: 100px;
+}

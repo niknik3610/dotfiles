@@ -1,0 +1,37 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "memory", "cpu"],
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "DP-1": [1, 2, 3, 4, 5, 6], // Replace DP-1 with your Main Monitor name
+            "DP-2": [1, 2]              // Replace DP-2 with your Side Monitor name
+        }
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "MUTED",
+        "on-click": "pavucontrol"
+    },
+
+    "memory": {
+        "format": "RAM {}%"
+    },
+
+    "cpu": {
+        "format": "CPU {usage}%"
+    }
+}
