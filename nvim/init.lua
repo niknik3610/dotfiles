@@ -18,30 +18,26 @@ vim.g.mapleader = " "
 
 --All Plugins added here:
 require('lazy').setup({
-    --themes
-    -- 'joshdick/onedark.vim',
-    -- 'catppuccin/nvim',
     'rose-pine/neovim',
 
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
-        -- or                            , branch = '0.1.x',
+        'nvim-telescope/telescope.nvim', 
+        --tag = '0.1.5',
         dependencies = { {'nvim-lua/plenary.nvim'} }
     },
     'nvim-telescope/telescope-fzf-native.nvim',
     'nvim-tree/nvim-web-devicons',
-    'nvim-treesitter/nvim-treesitter',
-    'nvim-treesitter/playground',
-    'nvim-treesitter/nvim-treesitter-context',
+    -- Treesitter was archived, commit is latest on main
+    {
+        'nvim-treesitter/nvim-treesitter',
+        commit = "4916d6592ede8c07973490d9322f187e07dfefac",
+        main = "nvim-treesitter",
+    },
     'mbbill/undotree',
     'tpope/vim-fugitive',
     'ThePrimeagen/harpoon',
-    'numToStr/Comment.nvim',
     'f-person/git-blame.nvim',
     'MunifTanjim/prettier.nvim',
-    {
-        --'zbirenbaum/copilot.lua',
-    },
     {
         'folke/trouble.nvim',
         'nvim-lualine/lualine.nvim',
@@ -49,23 +45,12 @@ require('lazy').setup({
             {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
         }
     },
-    {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        dependencies = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-            'williamboman/mason.nvim',
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
-        }
-    },
+    'neovim/nvim-lspconfig',             
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim', 
+    'hrsh7th/nvim-cmp',     
+    'hrsh7th/cmp-nvim-lsp', 
 })
 
 -- Breaks some compilation of treesitter-langauges sometimes
