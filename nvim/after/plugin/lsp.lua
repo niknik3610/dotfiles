@@ -65,3 +65,10 @@ require('mason-lspconfig').setup({
     ensure_installed = {
     },
 })
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = vim.api.nvim_create_augroup("RustFmt", { clear = true }),
+  pattern = "*.rs",
+  callback = function(args)
+    vim.lsp.buf.format({ bufnr = args.buf })
+  end,
+})
